@@ -44,6 +44,8 @@ WTForms==2.3.3
 
 > create a .env file and add your api key and secret key to the .env file in the format shown in the .env-sample file
 
+> source the .env file ` source .env`
+
 > run your application using `make serve` or `python manage.py serve`
 
 ### Link to the site
