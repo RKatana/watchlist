@@ -1,7 +1,9 @@
+import os
 from app import create_app
 from flask_script import Manager,Server
 
-app = create_app('development')
+ENVIRON = os.environ.get('ENVIRON')
+app = create_app(ENVIRON)
 manager = Manager(app)
 manager.add_command('serve', Server)
 
