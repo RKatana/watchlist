@@ -1,0 +1,21 @@
+{% extends "bootstrap/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>{{title}} </title>
+    {% else %}
+        <title>Home-Movie DB</title>
+    {% endif %}   
+</head>
+<body>
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock navbar%}
+    {% block content %}
+    
+    {% endblock %}
+</body>
+</html>

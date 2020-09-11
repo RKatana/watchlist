@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+{% if reviews %}
+    {% for review in reviews%}
+    <h5>{{review.movie_title}} </h5>
+    <p>{{review.review}} </p>
+    {% endfor%}
+{% else %}
+ <h3 class="info">This movie has no reviews</h3>
+{% endif %}
+
+{% endblock %}

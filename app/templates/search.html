@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import 'macros.html' as macro%}
+{% block content %}
+    {% if search_results %}
+    <h2>{{search_results|count}} movies found!</h2>
+    {{macro.displayMovie(search_results)}}
+    {% else %}
+    <style>
+        body{
+            background-image: url("{{url_for('static', filename= 'images/sad_dog.png')}}");
+            background-position-x: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+
+        }
+    </style>
+    {% endif %}
+{% endblock %}

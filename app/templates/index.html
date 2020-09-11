@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% import 'macros.html' as macro %}
+{% block content %}
+    <div class="landing-page">
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
+            .landing-page{
+                /* background-image: url('url_for("static", filename="images/movie-background.jpg")'); */
+                background-image: url('../static/images/movie-background.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position-y: center;
+                height: 80vh;
+                
+                
+            }
+            h1{
+                font-family: 'Merienda', cursive !important;
+                position: relative;
+                font-size: 60px !important;
+                /* top: 0; */
+                /* right: 0; */
+                left: -30px;
+            }
+            h3{
+                font-family: 'Merienda', cursive !important;
+                position: relative;
+                left: 0;
+                right: 0;
+            }
+            #myVideo{
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 80vh; 
+            }
+        </style>
+        <video loop autoplay muted class = 'landing-p pt-3' id="myVideo">
+            <source src="../static/images/hard-to-kill-preview.webm" type="video/webm">
+        </video>
+        <h1 class="h1 text-white text-center pt-md-4">The MDB Home</h1>
+    </div>
+    <div class="container">
+        <h3 class="text-center text-info h1">Popular Movies</h3>
+        <div class="row">
+            {% if popular_movies%}
+            {{macro.displayMovie(popular_movies)}}
+            {% endif %}
+        </div>
+    </div>
+    
+{% endblock %}
+includes

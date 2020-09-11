@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-lg-4">
+    <div class="row">
+        <div class="col-md-5" >
+            <img src="{{movie.poster}} " alt="{{movie.title}}" width="100%">
+        </div>
+        <div class="col-md-7">
+            <h2>{{movie.title}} </h2>
+            <h4>Overview</h4>
+            <p class="text-muted">{{movie.overview}} </p>
+            <h4>Votes</h4>
+            <p class="text-muted">{{movie.vote_count}} </p>
+            <h4>Average Rating</h4>
+            <p class="text-muted">{{movie.vote_average}} </p>
+            <h4>Release Date</h4>
+            <p class="text-muted">{{movie.release_date}} </p>
+            <h4>
+                <a class="text-success" href="/movie/review/{{movie.id}}/">Check reviews</a>
+                <a class="text-info" href="/movie/review/new/{{movie.id}}/">Add review</a>
+            </h4>
+        </div>
+    </div>
+</div>
+{% endblock %}
